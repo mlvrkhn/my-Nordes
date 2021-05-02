@@ -1,8 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" style="display: none">
+  <img alt="Vue logo" src="./assets/nordes-logo.png" style="height: 100px">
+  <h2>Nordes Bank API that displays currency fluctuation</h2>
   <currency-form :currencies="currencies"></currency-form>
-  <line-chart :chartData="chartData"></line-chart>
+  <line-chart :chartData="chartData" :label="label"></line-chart>
 </template>
+
 <script>
 import LineChart from './components/LineCharts.vue'
 import CurrencyForm from './components/CurencyForm.vue'
@@ -41,6 +43,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* background-color: #2c3e50; */
   margin-top: 60px;
 }
 </style>

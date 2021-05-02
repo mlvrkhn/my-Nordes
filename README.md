@@ -1,30 +1,32 @@
 # my-norges
 
-## Project setup
+That small app fetches currency rate and creates a graph out of that data.
+
+## How to install
 ```
-npm install
+npm i
 ```
 
-### Compiles and hot-reloads for development
+### Run server this way
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### If you want to build
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Project features
+- Build with Vue3, Chartjs, 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
-The API is open and the documentation can be found here: https://app.norges-bank.no/query/index.html#/en
+## Project difficulties
+
+> API documentation [here](https://app.norges-bank.no/query/index.html#/en)  
+> Examples of queries:  
+> `https://data.norges-bank.no/api/data/EXR/M.EUR.NOK?format=sdmx-json`  
+> `https://data.norges-bank.no/api/data/EXR/M.EUR.NOK?startPeriod=2018-01&format=sdmx-json`  
+
+
  
-Examples of queries:
-https://data.norges-bank.no/api/data/EXR/M.EUR.NOK?format=sdmx-json
-https://data.norges-bank.no/api/data/EXR/M.EUR.NOK?startPeriod=2018-01&format=sdmx-json
