@@ -15,6 +15,26 @@ class NorgesApi {
 			})
 			.catch(err => console.error(err));
 	}
+
+	getCurrencyRates(currency) {
+		return fetch(
+			`https://data.norges-bank.no/api/data/EXR/B.${currency}.NOK?startPeriod=2021-01&format=sdmx-json`
+		)
+			.then(res => {
+				if (!res.ok) {
+					throw new Error('Error while fetching data');
+				}
+				return res.json();
+			})
+			.then(data => {
+                console.log(
+					'🚀 ~ getCurrencyRates ~ data',
+					data.data.dataSets[0].series['0:0:0:0'].observations
+				);
+				return data.data.dataSets[0].series['0:0:0:0'].observations;
+			})
+			.catch(err => console.error(err));
+	}
 }
 
 const api = new NorgesApi;

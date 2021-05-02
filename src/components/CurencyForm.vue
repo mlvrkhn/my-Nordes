@@ -4,7 +4,7 @@
         <option disabled selected>Select Currency</option>
         <option v-for="curr in currencies" v-bind:key="curr.id">{{curr.id}}</option>
     </select>
-    <button type="submit">Search!</button>  
+    <button type="submit">Generate Chart</button>  
   </form>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            console.log('submit!');
+            this.$emit('getCurrency', this.selectedCurrency)
             this.selectedCurrency = '';
         }
     }
