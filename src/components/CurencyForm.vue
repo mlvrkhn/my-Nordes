@@ -4,7 +4,7 @@
         <option disabled selected>Select Currency</option>
         <option v-for="curr in currencies" v-bind:key="curr.id">{{curr.id}}</option>
     </select>
-    <button type="submit">Generate Chart</button>  
+    <button type="submit" class="bg-red-400">Generate Chart</button>  
   </form>
 </template>
 
