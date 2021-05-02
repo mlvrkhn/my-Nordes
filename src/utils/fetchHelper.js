@@ -18,7 +18,7 @@ class NorgesApi {
 
 	getCurrencyRates(currency) {
 		return fetch(
-			`https://data.norges-bank.no/api/data/EXR/B.${currency}.NOK?startPeriod=2021-01&format=sdmx-json`
+			`https://data.norges-bank.no/api/data/EXR/M.${currency}.NOK?startPeriod=2021-01&format=sdmx-json`
 		)
 			.then(res => {
 				if (!res.ok) {
@@ -27,13 +27,15 @@ class NorgesApi {
 				return res.json();
 			})
 			.then(data => {
+                const datesArray = data.data.structure.dimensions.observation[0].values.map(day => day.id);
 				const apiResponse = data.data.dataSets[0].series['0:0:0:0'].observations;
+                const pricesArray = [];
 
-                const resultsArray = [];
                 Object.values(apiResponse).forEach(val => {
-					resultsArray.push(val[0]);
+					pricesArray.push(val[0]);
 				});
-                return resultsArray;
+
+                return [datesArray, pricesArray];
 
 			})
 			.catch(err => console.error(err));
