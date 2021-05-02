@@ -1,15 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" style="display: none">
+  <currency-form></currency-form>
   <line-chart :chartData="chartData"></line-chart>
 </template>
 <script>
-import LineChart from './components/LineCharts'
-console.log('🚀 ~ LineChart', LineChart)
+import LineChart from './components/LineCharts.vue'
+import CurrencyForm from './components/CurencyForm.vue'
 
 export default {
   name: 'App',
   components: {
-    LineChart
+    LineChart,
+    CurrencyForm
   },
   data() {
     return {
@@ -21,8 +23,13 @@ export default {
       options: {},
     }
   },
+  methods: {
+    fetchAvailCurrencies() {
+      console.log('sth');
+    }
+  },
   async created() {
-
+    // this.logsth();
   }
 }
 </script>
