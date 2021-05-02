@@ -27,11 +27,14 @@ class NorgesApi {
 				return res.json();
 			})
 			.then(data => {
-                console.log(
-					'🚀 ~ getCurrencyRates ~ data',
-					data.data.dataSets[0].series['0:0:0:0'].observations
-				);
-				return data.data.dataSets[0].series['0:0:0:0'].observations;
+				const apiResponse = data.data.dataSets[0].series['0:0:0:0'].observations;
+
+                const resultsArray = [];
+                Object.values(apiResponse).forEach(val => {
+					resultsArray.push(val[0]);
+				});
+                return resultsArray;
+
 			})
 			.catch(err => console.error(err));
 	}

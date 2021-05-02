@@ -31,9 +31,7 @@ export default {
   methods: {
     async getRates(currency) {
       const response = await api.getCurrencyRates(currency);
-      console.log('🚀 ~ getRates ~ response', await response)
-      await this.chartData.observations.push(Object.values(response))
-      // console.log(await response);
+      console.log(await response);
     }
   },
   async created() {
