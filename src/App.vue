@@ -1,11 +1,12 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" style="display: none">
-  <currency-form></currency-form>
+  <currency-form :currencies="currencies"></currency-form>
   <line-chart :chartData="chartData"></line-chart>
 </template>
 <script>
 import LineChart from './components/LineCharts.vue'
 import CurrencyForm from './components/CurencyForm.vue'
+import api from './utils/fetchHelper'
 
 export default {
   name: 'App',
@@ -15,6 +16,7 @@ export default {
   },
   data() {
     return {
+      currencies: [],
       chartData: {
         datki: ['a', 'b', 'c', 'd'],
         totals: [1, 2, 3, 5],
@@ -24,12 +26,10 @@ export default {
     }
   },
   methods: {
-    fetchAvailCurrencies() {
-      console.log('sth');
-    }
   },
   async created() {
-    // this.logsth();
+    const response = await api.getAvailCurrencies();
+    await this.currencies.push(...response)
   }
 }
 </script>
