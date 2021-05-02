@@ -18,7 +18,7 @@ class NorgesApi {
 
 	getCurrencyRates(currency) {
 		return fetch(
-			`https://data.norges-bank.no/api/data/EXR/M.${currency}.NOK?startPeriod=2021-01&format=sdmx-json`
+			`https://data.norges-bank.no/api/data/EXR/B.${currency}.NOK?startPeriod=2021-01&format=sdmx-json`
 		)
 			.then(res => {
 				if (!res.ok) {
