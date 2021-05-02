@@ -1,16 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/nordes-logo.png" style="height: 100px">
-  <h2>Nordes Bank API that displays currency fluctuation</h2>
-  <currency-form 
-    :currencies="currencies" 
-    @get-currency="getRates"
-    ></currency-form>
-  <line-chart 
-    v-if="chartData.observations.length"
-    v-model="chartData" 
-    :chartData="chartData" 
-    :label="label"
-    ></line-chart>
+  <div class="grid max-w-screen-lg justify-items-center">
+    <img alt="NordesBank-logo" src="./assets/nordes-logo.png" class="h-24">
+    <h2 class="text-2xl p-4 place-self-center">Nordes Bank API that displays currency fluctuation</h2>
+    <currency-form 
+      :currencies="currencies" 
+      @get-currency="getRates"
+      ></currency-form>
+    <line-chart 
+      v-if="chartData.observations.length"
+      v-model="chartData" 
+      :chartData="chartData" 
+      :label="label"
+      ></line-chart>
+  </div>
 </template>
 
 <script>

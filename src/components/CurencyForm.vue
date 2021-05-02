@@ -1,10 +1,10 @@
 <template>
-  <form @submit.prevent="handleSubmit">
-    <select v-model="selectedCurrency">
+  <form @submit.prevent="handleSubmit" class="w-24 md:w-auto">
+    <select v-model="selectedCurrency" class="border-2 p-2 rounded">
         <option disabled selected>Select Currency</option>
         <option v-for="curr in currencies" v-bind:key="curr.id">{{curr.id}}</option>
     </select>
-    <button type="submit" class="bg-red-400">Generate Chart</button>  
+    <button type="submit" class="bg-red-400 border-2 p-2 rounded">Generate Chart</button>  
   </form>
 </template>
 

@@ -18,10 +18,15 @@ npm run build
 ```
 
 ## Project features
-- Build with Vue3, Chartjs, 
-
+- Tools used:
+    - Vue 3
+    - Webpack
+    - Tailwind
+    - Chart.js
 
 ## Project difficulties
+- Get Chart.js to talk to Vue3. 
+
 
 > API documentation [here](https://app.norges-bank.no/query/index.html#/en)  
 > Examples of queries:  
